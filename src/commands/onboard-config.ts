@@ -18,19 +18,16 @@ export function applyLocalSetupWorkspaceConfig(
   const hasSeoExpert = currentAgents.some((a) => a.id === "seo_expert");
   const seoExpertAgent = {
     id: "seo_expert",
-    description: "SEO Expert for Jeenora. Handles keyword research and site audits.",
     workspace: "~/.openclaw/workspace-seo",
   };
   const hasLeadGenerator = currentAgents.some((a) => a.id === "lead_generator");
   const leadGeneratorAgent = {
     id: "lead_generator",
-    description: "Lead Generation Expert for Jeenora. Finds B2B fashion buyers.",
     workspace: "~/.openclaw/workspace-leadgen",
   };
   const hasTestAgent = currentAgents.some((a) => a.id === "test_agent");
   const testAgent = {
     id: "test_agent",
-    description: "Test Agent for Jeenora. Runs experiments and tests.",
     workspace: "~/.openclaw/workspace-test",
   };
 
