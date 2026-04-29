@@ -19,16 +19,30 @@ export function applyLocalSetupWorkspaceConfig(
   const seoExpertAgent = {
     id: "seo_expert",
     workspace: "~/.openclaw/workspace-seo",
+    tools: {
+      allow: ["web_search", "web_fetch", "browser", "sessions_list", "sessions_history"],
+    },
   };
   const hasLeadGenerator = currentAgents.some((a) => a.id === "lead_generator");
   const leadGeneratorAgent = {
     id: "lead_generator",
     workspace: "~/.openclaw/workspace-leadgen",
+    tools: {
+      allow: ["web_search", "web_fetch", "browser", "sessions_spawn", "sessions_list", "sessions_history"],
+    },
   };
   const hasTestAgent = currentAgents.some((a) => a.id === "test_agent");
   const testAgent = {
     id: "test_agent",
     workspace: "~/.openclaw/workspace-test",
+    tools: {
+      allow: ["exec", "browser", "web_search", "web_fetch", "sessions_spawn", "sessions_list", "sessions_history"],
+      exec: {
+        security: "allowlist" as const,
+        ask: "on-miss" as const,
+        safeBins: ["nmap", "nikto", "gobuster", "curl", "wget", "sqlmap", "whois", "dig", "nslookup", "npm", "python3", "pip"],
+      },
+    },
   };
 
   const newAgentsList = [...currentAgents];
