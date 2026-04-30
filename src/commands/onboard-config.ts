@@ -28,7 +28,12 @@ export function applyLocalSetupWorkspaceConfig(
     id: "lead_generator",
     workspace: "~/.openclaw/workspace-leadgen",
     tools: {
-      allow: ["web_search", "web_fetch", "browser", "sessions_spawn", "sessions_list", "sessions_history"],
+      allow: ["exec", "web_search", "web_fetch", "browser", "sessions_spawn", "sessions_list", "sessions_history"],
+      exec: {
+        security: "allowlist" as const,
+        ask: "on-miss" as const,
+        safeBins: ["node", "npm", "curl"],
+      },
     },
   };
   const hasTestAgent = currentAgents.some((a) => a.id === "test_agent");
