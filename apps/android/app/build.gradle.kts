@@ -182,7 +182,7 @@ ktlint {
 }
 
 dependencies {
-    val composeBom = platform("androidx.compose:compose-bom:2026.03.01")
+    val composeBom = platform("androidx.compose:compose-bom:2026.05.01")
     implementation(composeBom)
     androidTestImplementation(composeBom)
 
@@ -201,9 +201,9 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
 
     // Material Components (XML theme + resources)
-    implementation("com.google.android.material:material:1.13.0")
+    implementation("com.google.android.material:material:1.14.0")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.11.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0")
 
     implementation("androidx.security:security-crypto:1.1.0")
@@ -227,12 +227,12 @@ dependencies {
     implementation("dnsjava:dnsjava:3.6.4")
 
     testImplementation("junit:junit:4.13.2")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.10.2")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.11.0")
     testImplementation("io.kotest:kotest-runner-junit5-jvm:6.1.11")
     testImplementation("io.kotest:kotest-assertions-core-jvm:6.1.11")
     testImplementation("com.squareup.okhttp3:mockwebserver:5.3.2")
     testImplementation("org.robolectric:robolectric:4.16.1")
-    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:6.0.3")
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:6.1.0")
 }
 
 tasks.withType<Test>().configureEach {
